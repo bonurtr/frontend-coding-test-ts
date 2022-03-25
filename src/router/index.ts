@@ -8,6 +8,10 @@ import {
 import LayoutMain from '../components/layout/LayoutMain.vue'
 import Error from '../views/Error.vue'
 import Home from '../views/Home.vue'
+import ExerciseOne from '../views/ExerciseOne.vue'
+import StarWars from '../views/StarWars.vue'
+
+
 
 const mainRoutes: RouteRecordRaw[] = [
   {
@@ -16,9 +20,22 @@ const mainRoutes: RouteRecordRaw[] = [
     props: true,
     component: Home,
   },
+  {
+    path: '/exerciseone',
+    name: 'ExerciseOne',
+    props: true,
+    component: ExerciseOne,
+  },
+  {
+    path: '/swapi',
+    name: 'swapi',
+    props: true,
+    component: StarWars,
+  },
 ]
 
 const routes: RouteRecordRaw[] = [
+ 
   {
     path: '/error',
     alias: '/:pathMatch(.*)*',
@@ -39,6 +56,8 @@ export default function initializeRouter(app: App): Router {
     history: createWebHistory(),
     routes,
   })
+
+
 
   app.use(router)
 
